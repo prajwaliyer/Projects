@@ -15,4 +15,4 @@ Project is created with:
 * Borland C++
 	
 ## Setup
-To run these programs, you will need an IDE for Python/C++:
+To run these programs, you will need an IDE for Python/C++
