@@ -1,5 +1,7 @@
 ## Table of contents
 * [General info](#general-info)
+# Chess
+Two players take turns playing a classic game of chess.
 * [Technologies](#technologies)
 * [Setup](#setup)
 
