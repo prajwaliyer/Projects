@@ -133,16 +133,14 @@ def move():
                                                         board[y][x] == colored(' Q ', 'blue') or
                                                         board[y][x] == colored(' K ', 'blue')):
             check = 0
-        else:
-            check = 1
 
         # CHECKING FOR  YELLOW TEAMMATES
-        if board[j][i] == colored(' P ', 'yellow') and (board[y][x] == colored(' P ', 'yellow') or
-                                                        board[y][x] == colored(' R ', 'yellow') or
-                                                        board[y][x] == colored(' N ', 'yellow') or
-                                                        board[y][x] == colored(' B ', 'yellow') or
-                                                        board[y][x] == colored(' Q ', 'yellow') or
-                                                        board[y][x] == colored(' K ', 'yellow')):
+        elif board[j][i] == colored(' P ', 'yellow') and (board[y][x] == colored(' P ', 'yellow') or
+                                                          board[y][x] == colored(' R ', 'yellow') or
+                                                          board[y][x] == colored(' N ', 'yellow') or
+                                                          board[y][x] == colored(' B ', 'yellow') or
+                                                          board[y][x] == colored(' Q ', 'yellow') or
+                                                          board[y][x] == colored(' K ', 'yellow')):
             check = 0
         elif board[j][i] == colored(' R ', 'yellow') and (board[y][x] == colored(' P ', 'yellow') or
                                                           board[y][x] == colored(' R ', 'yellow') or
@@ -179,6 +177,7 @@ def move():
                                                           board[y][x] == colored(' Q ', 'yellow') or
                                                           board[y][x] == colored(' K ', 'yellow')):
             check = 0
+        # IF BOTH YELLOW AND BLUE AREN'T ATTACKING TEAM MATES
         else:
             check = 1
 
@@ -218,7 +217,7 @@ def move():
                 return 0
 
         # KNIGHT
-        if board[j][i] == colored(" N ", 'blue') or colored(" N ", 'yellow'):
+        if board[j][i] == colored(" N ", 'blue') or board[j][i] == colored(" N ", 'yellow'):
             if abs(y-j) == 2 and abs(x-i) == 1:
                 return 1
             elif abs(x-i) == 2 and abs(y-j) == 1:
@@ -245,7 +244,7 @@ def move():
                 return 0
 
         # KING
-        if board[j][i] == colored(" K ", ' blue') or board[j][i] == colored(" K ", ' yellow'):
+        if board[j][i] == colored(" K ", 'blue') or board[j][i] == colored(" K ", 'yellow'):
             if abs(y-j) <= 1 and abs(x-i) <= 1:
                 if abs(y-j) == 0 and abs(x-i) == 0:
                     return 0
